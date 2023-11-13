@@ -10,7 +10,7 @@ void setup()
 void loop()
 {
   // read the input on analog pin 0:
-  sensorValue = analogRead(A1);
+  sensorValue = analogRead(A0);
   mapeado = map(sensorValue, 0, 1023, 0, 15);
 
   // print out the value you read:

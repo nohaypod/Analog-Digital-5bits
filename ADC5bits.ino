@@ -10,10 +10,13 @@ void setup()
 void loop()
 {
   // read the input on analog pin 0:
-  sensorValue = analogRead(A0);
-  mapeado = map(sensorValue, 0, 1023, 0, 31);
+  sensorValue = analogRead(A1);
+  mapeado = map(sensorValue, 0, 1023, 0, 15);
 
   // print out the value you read:
   Serial.println(mapeado);
-  delay(10); // 
+  for (int i = 0; i <= 5; i++) {
+  digitalWrite(i, (mapeado >> (i - 2)) & 1);
+}
+  delay(10); // Delay a little bit to improve simulation performance
 }
